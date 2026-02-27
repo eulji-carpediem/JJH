@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+            display : flex;
+            flex-direction: column;
+            /* flex-wrap: wrap; */
+            gap : 10px;
+            height : 100vh;
+        }
+
+        header {
+            width : 100%;
+            height : 50px;
+            background: #000000b1;
+            color : white;
+            display : flex;
+            align-items: center;
+            /* padding-left: 10px; */
+        }
+
+        nav, aside {
+            width : 180px;
+            background: rgba(137, 43, 226, 0.229)
+        }
+
+        nav {
+            margin-left : 15px;
+        }
+
+        aside {
+            margin-right : 15px;
+        }
+        main {
+            display : flex;
+            /* justify-content: space-around; */
+            gap : 10px;
+            flex : 1;
+        }
+
+            article {
+            margin-left : 15px;
+            margin-right : 15px;
+        }
+
+        .test {
+            display : flex;
+            align-items: center;
+            width : 100%;
+            height : 50px;
+            background: rgba(0, 0, 255, 0.257);
+            border : 2px dashed rgba(0, 0, 255, 0.257);
+        }
+
+        h4 {
+            margin-left: 10px;
+            margin-bottom: 0px;
+        }
+
+        ul {
+            margin-top : 0px;
+        }
+
+        section {
+            flex : 1;
+            border : 1px solid gray;
+        }
+
+        footer {
+            width : 100%;
+            height : 50px;
+            background: #000000b1;
+            display : flex;
+            align-items: center;
+            color: white;
+        }
+
+        .test2 {
+            margin-left : 10px;     
+        }
+        
+        .test3 {
+            margin-left : 24px;
+        }
+
+        pre {
+            display : inline-block;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        머리부(Header)
+    </header>
+    <main>
+        <nav>
+            <h4 class="test3">네비게이션(Nav)</h4>    
+            <ul>
+                <li> Home </li>
+                <li> About </li>
+                <li> Contact</li>
+            </ul>
+        </nav>
+
+        <section>
+            <article>
+                <h1>
+                    메인 콘텐츠(Main)
+                </h1>
+                <p class="test"> 양옆은 고정폭, 가운데는 가변폭! </p>
+                <span> Hint. 가운데 영역은<pre> flex: 1</pre>로 남는 공간을 차지합니다.</span>
+            </article>
+
+
+        </section>
+
+        <aside>
+            <h4>사이드바(Aside)</h4>
+            <p class="test2"> 공지/광고/프로필 등</p>
+        </aside>
+    </main>
+
+    <footer>
+        바닥부(footer)
+    </footer>
+</body>
+
+</html>
