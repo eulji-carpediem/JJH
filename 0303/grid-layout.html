@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html  {
+            margin: 0px;
+            padding: 0px;
+            /* min-height: 100vh; */
+        }
+
+        .grid-layout-ct {
+            display: grid;
+            grid-template-rows: 50px 1fr 50px;
+            height: 100vh;
+            gap: 30px;
+        }
+
+        header,
+        footer {
+            border: 2px solid gray;
+            background: rgba(195, 127, 127, 0.545);
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 180px auto 180px;
+            gap: 30px;
+
+        }
+
+        nav,
+        aside {
+            padding-left: 10px;
+            border: 1px solid gray;
+        }
+
+        nav {
+            margin-left: 20px;
+        }
+
+        aside {
+            margin-right: 20px;
+        }
+
+        section {
+            border: 1px solid gray;
+        }
+
+        article {
+            padding: 20px;
+        }
+
+        .p-tag {
+            width: 100%;
+            height: 50px;
+            background-color: rgba(0, 255, 255, 0.423);
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+        }
+
+        pre {
+            display: inline-block
+        }
+
+        @media (max-width : 768px) {
+            main {
+                grid-template-columns: none;
+                grid-template-rows: 1fr 1.5fr 1fr;
+                gap: 20px;
+            }
+
+            nav, aside {
+                margin: 0px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-layout-ct">
+        <header>
+            머리부(Header)
+        </header>
+        <main>
+            <nav>
+                <h4 class="test3">네비게이션(Nav)</h4>
+                <ul>
+                    <li> Home </li>
+                    <li> About </li>
+                    <li> Contact</li>
+                </ul>
+            </nav>
+
+            <section>
+                <article>
+                    <h1>
+                        메인 콘텐츠(Main)
+                    </h1>
+                    <p class="p-tag"> 양옆은 고정폭, 가운데는 가변폭! </p>
+                    <span> Hint. 가운데 영역은
+                        <pre> flex: 1</pre>로 남는 공간을 차지합니다.
+                    </span>
+                </article>
+            </section>
+
+            <aside>
+                <h4>사이드바(Aside)</h4>
+                <p class="test2"> 공지/광고/프로필 등</p>
+            </aside>
+        </main>
+
+        <footer>
+            바닥부(footer)
+        </footer>
+    </div>
+</body>
+
+</html>
