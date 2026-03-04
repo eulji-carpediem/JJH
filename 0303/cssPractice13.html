@@ -1,0 +1,83 @@
+1-13
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            box-sizing: border-box;
+        }
+
+        section {
+            width : 250px;
+            height: 225px;
+            background-color: #FFB9B9;
+            
+            margin : 16px 0px 0px 16px;
+
+            display : flex;
+            align-items: end;
+            justify-content: center;
+            border-radius: 8px 8px 0px 0px;
+        }
+
+        .total-ct {
+            width : 250px;
+            height : 75px;
+            padding : 6px 8px 6px 8px;
+            background-color: #FFFFFF;
+            border : solid;
+            border-width: 0px 1px 1px 1px;
+            border-color: #FFB9B9;
+
+            display : flex;
+            flex-direction: column;
+            gap : 16px;
+        }
+
+        .total-ct > p {
+            font-size: 12px;
+            font-weight: 400;
+        }
+
+        article {
+            display : flex;
+            gap : 8px;
+            align-items: center;
+        }
+
+        article > div {
+            width : 24px;
+            height: 24px;
+            background-color: #D9D9D9;
+            border-radius: 1000px;
+        }
+
+        article > p {
+            font-size: 12px;
+            font-weight: 400;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="total-ct">
+            <p> 안녕하세요. 텍스트입니다. </p>
+            <article>
+                <div></div>
+                <p> 휴양지 </p>
+            </article>
+        </div>
+    </section>
+</body>
+
+</html>

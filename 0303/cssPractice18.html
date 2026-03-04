@@ -14,6 +14,7 @@
         background-color: #FFE4E4;
 
         display :flex;
+        gap : 8px;
 
         }
 
@@ -33,15 +34,38 @@
         p {
             margin : 0px;
         }
+
+        .hi {
+            width : 96px;
+            height: 19px;
+            background-color: #FFB9B9;
+            font-size: 12px;
+            font-weight: 400;
+            display : flex;
+            color : #FFFFFF;
+            justify-content: center;
+            margin-top : 8px;
+        }
+
+        .goodday {
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        .weather {
+            font-size: 14px;
+            font-weight: 400;
+            color : #8B8B8B;
+        }
     </style>
 </head>
 <body>
     <section>
         <div class="left-ct"></div>
         <div class="right-ct">
-            <p> 반가워요! </p>
-            <p> 좋은하루보내세요! </p>
-            <p> 날씨가 좋네요! </p>
+            <p class="hi"> 반가워요! </p>
+            <p class="goodday"> 좋은하루보내세요! </p>
+            <p class="weather"> 날씨가 좋네요! </p>
         </div> 
     </section>
 </body>

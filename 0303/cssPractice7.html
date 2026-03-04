@@ -1,0 +1,55 @@
+1-7
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            box-sizing: border-box;
+        }
+
+        section {
+            display: grid;
+            width : 278px;
+            height : 160px;
+            grid-template-rows: 120px 40px;
+            margin : 16px 0px 0px 16px;
+        }
+
+        section > div:first-child {
+            background-image: url('7css.svg');
+            border-radius: 8px 8px 0px 0px;
+        }
+
+        section > div:nth-child(2) {
+            background-color: #CA785C;
+
+            display : flex;
+            align-items: center;
+
+            font-size: 16px;
+            font-weight: 700;
+            color : #FFFFFF;
+            padding-left: 16px;
+
+            border-radius: 0px 0px 8px 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div></div>
+        <div> 안녕하세요! </div>
+    </section>
+</body>
+
+</html>

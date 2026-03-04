@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin : 0px;
+            padding : 0px;
+        }
+
+        body {
+            box-sizing: border-box;
+        }
+        section {
+            width : 336px;
+            height : 148px;
+            top : 16px;
+            left : 16px;
+            border-radius: 8px;
+            border : 1px solid #C2C2C2;
+
+            display : flex;
+            flex-direction: column;
+            align-items: center;
+            gap : 8px;
+        }
+
+        .site1 {
+            font-weight: 400;
+            font-size : 16px;
+            text-align: center;
+            margin-top : 24px;
+        }
+
+        .login {
+            width : 288px;
+            height : 48px;
+            background-color : #17B75E;
+
+            display : flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 20px;
+            font-weight: 700;
+            color : #FFFFFF;
+            border-radius: 8px;
+        }
+
+        .find-ct {
+            display: flex;
+            width : 100%;
+            gap : 8px;
+            justify-content: center;
+        } 
+
+        .find-ct > p {
+            font-size : 14px;
+            font-weight: 400;
+        }
+
+        span {
+            /* width : 1px; */
+            border : 1px solid #D3D5D7;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <p class="site1"> 사이트를 더 안전하고 편리하게 이용하세요. </p>
+        <p class="login"> 로그인</p>
+        <div class="find-ct">
+            <p> 아이디 찾기</p>
+            <span> </span>
+            <p> 비밀번호 찾기 </p>
+            <span></span>
+            <p> 회원가입</p>
+        </div>
+    </section>
+</body>
+</html>
