@@ -1,3 +1,4 @@
+1-15
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,8 +8,8 @@
     <title>Document</title>
     <style>
         * {
-            margin: 0;
-            padding: 0;
+            margin: 0px;
+            padding: 0px;
         }
 
         body {
@@ -16,54 +17,66 @@
         }
 
         section {
-            display: flex;
+            display : flex;
             flex-direction: column;
-            gap: 24px;
-            margin-left: 16px;
+            width : 280px;
+            margin-left : 16px;
+            gap : 24px;
         }
 
-        .top-login {
+        .login {
             font-size: 24px;
             font-weight: 700;
         }
 
-        .id,
-        .password {
-            display: flex;
+        .login-ct {
+            display : flex;
             flex-direction: column;
             gap : 8px;
         }
 
-        label {
+        .id, .password {
             font-size: 16px;
             font-weight: 400;
         }
 
         input {
-            width : 278px;
-            height : 40px;
+            height: 40px;
             border-radius: 8px;
             border : 1px solid #C3C3C3;
+        }
+
+        button {
+            height: 48px;
+            border-radius: 8px;
+            border : 0px;
+            background-color: #17B75E;
+
+            color : #FFFFFF;
+            font-size: 20px;
+            font-weight: 700;
         }
     </style>
 </head>
 
 <body>
-    <section>
-        <p class="top-login"> 로그인</p>
+    <form>
+        <section>
+            <p class="login"> 로그인 </p>
 
-        <div class="id">
-            <label> 아이디 </label>
-            <input>
-        </div>
+            <div class="login-ct">
+                <label class="id">아이디</label>
+                <input type="text">
+            </div>
 
-        <div class="password">
-            <label> 비밀번호 </label>
-            <input>
-        </div>
+            <div class="login-ct">
+                <label class="password">비밀번호</label>
+                <input type="text">
+            </div>
+            <button> 로그인</button>
+        </section>
+    </form>
 
-        <p class="bottom-login"> 로그인 </p>
-    </section>
 </body>
 
 </html>
