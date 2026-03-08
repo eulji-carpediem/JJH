@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        main {
+            width: 50%;
+            margin: 0 auto;
+            margin-top: 30px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .sec {
+            width: 100%;
+            border: 2px solid rgba(128, 128, 128, 0.531);
+            border-radius: 10px;
+        }
+
+        #first-Section,
+        #second-Section {
+            height: 300px;
+            padding: 20px;
+
+        }
+
+        #first-Section {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        li {
+            margin-top: 20px;
+            height: 40px;
+            line-height: 40px;
+            padding-left: 10px;
+        }
+
+        #third-Section {
+            height: 80px;
+            padding: 20px;
+
+        }
+
+        h1 {
+            margin: 0px;
+            margin-bottom: 20px;
+        }
+
+        .box {
+            width: 100%;
+            border: 1px solid gray;
+            height: 50px;
+
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+
+            background: rgba(228, 226, 226, 0.565);
+        }
+
+        .special {
+            background: rgba(255, 230, 2, 0.257);
+            border-color: #ffe602ce;
+        }
+
+        #third-Section>button {
+            margin-left: 10px;
+        }
+
+        button {
+            width: 150px;
+            height: 40px;
+            margin-right: 10px;
+            background-color: dodgerblue;
+            color: white;
+            border: none;
+        }
+
+        button:hover {
+            background-color: rgba(30, 143, 255, 0.397);
+        }
+
+        .last {
+            margin-bottom: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section id="first-Section" class="sec">
+            <h1 id="title"> 제목 영역</h1>
+            <div class="firstBox box"> 첫 번째 박스</div>
+            <div class="special box"> 두 번째 박스 (특별)</div>
+            <div class="box"> 세 번째 박스</div>
+        </section>
+
+        <section id="second-Section" class="sec">
+            <ul>
+                <li> 첫 번째 목록 </li>
+                <li class="special"> 두 번째 목록 (특별) </li>
+                <li> 세 번째 목록 </li>
+                <li> 네 번째 목록 </li>
+            </ul>
+        </section>
+
+        <section id="third-Section" class="sec">
+            <input type="text" placeholder="택스트 입력">
+            <input type="email" placeholder="이메일 입력">
+            <button> 일반 버튼</button>
+        </section>
+
+        <section>
+            <button onclick=idSelect()> ID로 선택</button>
+            <button onclick=classSelect()> 클래스로 선택</button>
+            <button onclick=tagSelect()> 태그로 선택</button>
+            <button onclick=specialSelect()> 특별 클래스 선택</button>
+        </section>
+
+        <section class="last">
+            <button onclick=firstBoxSelect()> 첫 번째만 선택</button>
+            <button onclick=allBoxSelect()> 모든 박스 선택</button>
+            <button onclick=mixSelect()> 복합 선택자</button>
+            <button onclick=inputSelect()> 입력 필드 선택</button>
+        </section>
+    </main>
+
+    <script>
+        function idSelect() {
+            const $idselect = document.querySelector('#title');
+            $idselect.innerText = 'ID로 선택된 제목입니다.';
+            $idselect.style.color = 'red';
+        }
+
+        function classSelect() {
+            const $classselect = document.querySelector('.firstBox');
+            $classselect.innerText = 'class로 선택된 첫 번째 박스입니다.';
+            $classselect.style.background = '#62ff1e65';
+        }
+
+        function tagSelect() {
+            const $tagselect = document.querySelector('div');
+            $tagselect.style.borderColor = "blue";
+            $tagselect.style.borderWidth = "2px";
+        }
+
+        function specialSelect() {
+            const $specialselect = document.querySelectorAll('.special');
+            [...$specialselect].forEach((special, specialIndex) => {
+                special.style.color = "brown";
+                special.style.fontWeight = "800";
+                special.innerText = `특별 클래스로 선택된 ${specialIndex+1}번 입니다.`;
+            })
+        }
+
+        function firstBoxSelect() {
+            const $firstBoxselect = document.querySelector('#first-Section .firstBox');
+            $firstBoxselect.style.background = "#1e7cff65";
+            $firstBoxselect.innerText = "첫 번째 컨테이너의 첫 번째 박스입니다."
+        }
+
+        function allBoxSelect() {
+            const $allbox = document.querySelectorAll('.box');
+            [...$allbox].forEach((box, boxIndex) => {
+                box.style.background = "pink";
+                box.innerText = `모든 박스로 선택된 ${boxIndex+1}번 입니다.`;
+            })
+        }
+
+        function mixSelect() {
+            const $mix = document.querySelectorAll('#first-Section .box:nth-child(even)');
+            [...$mix].forEach((mix, mixIndex) => {
+                mix.innerText = `복합 선택자로 선택된 ${mixIndex+1}번 입니다.`
+                mix.style.background = "#15fe0065";
+                mix.style.borderStyle = "dashed";
+                mix.style.borderWidth = "3px";
+            })
+        }
+
+        function inputSelect() {
+            const $firstinput = document.querySelector('input[type="text"]');
+            const $secondinput = document.querySelector('input[type="email"]');
+
+            $firstinput.value = "querySelector로 설정한 값";
+            $firstinput.style.background = "#ffe602ce";
+            $firstinput.style.borderWidth = "2px";
+
+            $secondinput.value = "querySelector@practice.com";
+            $secondinput.style.background = "#b6fe0095"
+            $secondinput.style.borderWidth = "2px";
+        }
+
+
+    </script>
+</body>
+
+</html>
