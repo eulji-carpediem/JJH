@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        main {
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        div {
+            margin-top: 20px;
+            width: 100%;
+            height: 50px;
+            border: 1px solid gray;
+            /* background: white;; */
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        li {
+            margin-top: 20px;
+        }
+
+        button {
+            width: 150px;
+            height: 40px;
+            color: white;
+            background: rgb(6, 131, 248);
+            margin: 20px 10px 0px 0px;
+            border: none;
+        }
+
+        button:hover {
+            background: rgba(6, 131, 248, 0.497);
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div> 첫 번째 문단</div>
+
+        <div> 두 번째 문단</div>
+
+        <div> 세 번째 문단</div>
+
+        <ul>
+            <li>첫 번째 목록</li>
+            <li>두 번째 목록</li>
+            <li>세 번째 목록</li>
+            <li>네 번째 목록</li>
+        </ul>
+
+        <button onclick=allParagraphClick()> 모든 문단 선택</button>
+
+        <button onclick=allListClick() id="all-list-select"> 모든 목록 선택</button>
+
+        <button onclick=firstParagraphClick() id="first-para-select"> 첫 번째 문단만 선택</button>
+    </main>
+
+    <script>
+        function allParagraphClick() {
+            const allpara = document.getElementsByTagName("div");
+            [...allpara].forEach((para, paraindex) => {
+                para.style.background = "yellow";
+                para.innerText = `선택된 ${paraindex+1}번째 문단입니다.`;
+            })
+        }
+
+        function allListClick() {
+            const alllist = document.getElementsByTagName("li");
+            [...alllist].forEach((list, listindex) => {
+                list.style.color = "blue";
+                list.style.fontSize = "20px";
+                list.innerText = `선택된 ${listindex}번째 항목입니다.`;
+            })
+        }
+
+        function firstParagraphClick() {
+            const firstpara = document.getElementsByTagName("div");
+            [...firstpara].forEach((first, firstIndex) => {
+                if(firstIndex === 0) {
+                    first.style.background = "green";
+                    first.innerText = "첫 번째 문단만 선택하였습니다."
+                }
+
+            })
+        }
+    </script>
+</body>
+
+</html>
