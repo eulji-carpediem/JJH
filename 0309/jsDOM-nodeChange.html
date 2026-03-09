@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        main {
+            padding-left: 10px;
+        }
+
+        .change, .newElement {
+            width: 80%;
+            height: 50px;
+            /* font-size: 20px; */
+
+            display: flex;
+            align-items: center;
+            background: red;
+            border: none;
+            margin-top: 5px;
+            margin-left: 5px;
+            color: white;
+            padding-left: 10px;
+        }
+
+        button {
+            margin-top: 10px;
+        }
+
+        .newElement {
+            background: green;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="change box1"> 교체될 요소 1</div>
+        <div class="change box2"> 교체될 요소 2</div>
+        <div class="change box3"> 교체될 요소 3</div>
+
+        <button onclick="elementChange();"> 요소로 교체 </button>
+        <button onclick="textChange();"> 텍스트로 교체 </button>
+        <button onclick="HTMLChange();"> HTML로 교체 </button>
+    </main>
+
+    <script>
+        function elementChange() {
+            const $element = document.querySelector('.box1');
+
+            const newElement = document.createElement('div');
+            newElement.className="newElement";
+            newElement.innerText = "새로운 요소로 교체됨"
+            $element.replaceWith(newElement);
+        }
+        function textChange() {
+            const $text = document.querySelector('.box2');
+            $text.replaceWith('단순 텍스트로 교체됨');
+        }
+
+        function HTMLChange() {
+            const $HTML = document.querySelector('.box3');
+            $HTML.style.background = "green";
+            $HTML.innerHTML = '<b> HTML 요소로 교체됨 </b>'
+        }
+    </script>
+</body>
+
+</html>

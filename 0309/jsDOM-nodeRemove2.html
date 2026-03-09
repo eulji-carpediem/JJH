@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        main {
+            width: 80%;
+            padding: 20px;
+            border: 3px solid rgba(255, 0, 17, 0.486);
+            margin: 20px 0px 0px 20px;
+        }
+
+        button {
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+
+        .list {
+            margin-top: 5px;
+            height: 50px;
+            width: 100%;
+            background: rgba(255, 0, 0, 0.623);
+            border : 1px solid black;
+
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="delete-ct">
+        <div class="list box1"> 삭제할 자식 1</div>
+        <div class="list box2"> 삭제할 자식 2</div>
+        <div class="list box3"> 삭제할 자식 3</div>
+        <div class="list box4"> 삭제할 자식 4</div>
+    </main>
+
+    <button onclick="firstDelete();"> 첫 번째 자식 삭제 </button>
+    <button onclick="secondDelete();"> 두 번째 자식 삭제 </button>
+    <button onclick="thirdDelete();"> 세 번째 자식 삭제 </button>
+    <button onclick="finalDelete();"> 마지막 자식 삭제 </button>
+
+    <script>
+        const $parent = document.querySelector('.delete-ct');
+
+        function firstDelete() {
+            const $firstchild = document.querySelector('.box1');
+            $parent.removeChild($firstchild);
+        }
+
+        function secondDelete() {
+            const $secondchild = document.querySelector('.box2');
+            $parent.removeChild($secondchild);
+        }
+
+        function thirdDelete() {
+            const $thirdchild = document.querySelector('.box3');
+            $parent.removeChild($thirdchild);
+        }
+
+        function finalDelete() {
+            const $final = document.querySelector('.box4');
+            $parent.removeChild($final);
+        }
+    </script>
+</body>
+
+</html>

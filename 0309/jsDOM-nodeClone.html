@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        main {
+            width: 50%;
+            margin: 20px 0px 0px 20px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .original-ct {
+            width: 100%;
+            border: 2px solid black;
+        }
+
+        .copy-ct {
+            width: 100%;
+            border: 2px solid black;
+
+        }
+
+        article {
+            padding: 20px;
+            border: 2px solid blue;
+            background: rgba(0, 72, 255, 0.295);
+            margin: 20px;
+        }
+
+        .copy-ct>h3 {
+            margin-left: 10px;
+        }
+
+        .clone {
+            background-color: rgba(65, 149, 65, 0.616);
+            border : 2px solid green
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section class="original-ct">
+            <article class="article-ct">
+                <h3> 원본 요소</h3>
+                <div> 자식 요소 1</div>
+                <div> 자식 요소 2</div>
+            </article>
+        </section>
+
+        <section class="copy-ct">
+            <h3 class="copy-contant"> 복제된 요소들이 여기 추가됩니다.</h1>
+        </section>
+
+        <section>
+            <button onclick="paraFalse();"> 파라미터 : false</button>
+            <button onclick="paraTrue();"> 파라미터 : true</button>
+            <button onclick="copyDelete();"> 복제본 제거 </button>
+        </section>
+    </main>
+
+    <script>
+        const $paraTF = document.querySelector('.article-ct');
+        const $copyTF = document.querySelector('.copy-ct');
+        function paraFalse() {
+            const $FalseCopy = $paraTF.cloneNode(false);
+            $FalseCopy.innerText = "파라미터 : false";
+            $FalseCopy.classList.add('clone');
+            
+            $copyTF.appendChild($FalseCopy);
+
+        }
+
+        function paraTrue() {
+            const $Truepara = $paraTF.cloneNode(true);
+            $Truepara.classList.add('clone');
+            $copyTF.appendChild($Truepara);
+        }
+
+        function copyDelete() {
+            const $copyDelete = document.querySelectorAll('.clone');
+            [...$copyDelete].forEach((del) => {del.remove()})
+            
+
+        }
+    </script>
+</body>
+
+</html>

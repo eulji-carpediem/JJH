@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        main {
+            width: 80%;
+            padding: 20px;
+            border: 3px solid black;
+            margin: 20px 0px 0px 20px;
+        }
+
+        button {
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+
+        .list {
+            margin-top: 5px;
+            height: 50px;
+            width: 100%;
+            background: rgba(0, 72, 255, 0.545);
+
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="list box1"> 삭제할 항목 1</div>
+        <div class="list box2"> 삭제할 항목 2</div>
+        <div class="list box3"> 삭제할 항목 3</div>
+        <div class="list box4"> 삭제할 항목 4</div>
+    </main>
+
+    <button onclick="firstDelete();"> 첫 번째 삭제 </button>
+    <button onclick="secondDelete();"> 두 번째 삭제 </button>
+    <button onclick="thirdDelete();"> 세 번째 삭제 </button>
+    <button onclick="finalDelete();"> 마지막 삭제 </button>
+
+    <script>
+        function firstDelete() {
+            const $first = document.querySelector('.box1');
+            $first.remove();
+        }
+
+        function secondDelete() {
+            const $second = document.querySelector('.box2');
+            $second.remove();
+        }
+
+        function thirdDelete() {
+            const $third = document.querySelector('.box3');
+            $third.remove();
+        }
+
+        function finalDelete() {
+            const $final = document.querySelector('.box4');
+            $final.remove();
+        }
+    </script>
+</body>
+
+</html>

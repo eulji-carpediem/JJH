@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        main {
+            width: 50%;
+            /* height: 250px; */
+        }
+
+        section {
+            width: 100%;
+            /* height : 150px; */
+            border: 3px solid gray;
+            margin-bottom: 20px;
+        }
+
+        .existing {
+            width: 95%;
+            /* height: 40px; */
+            margin: 10px auto;
+            border: 2px solid blue;
+            padding: 5px;
+        }
+
+        button {
+            margin: 10px 10px 0px 0px;
+        }
+
+        button:hover {
+            background-color: rgba(128, 128, 128, 0.425);
+            border: 1px solid black;
+        }
+
+        .addBefore {
+            width: 97%;
+            background: yellow;
+            border: 1px solid rgb(255, 213, 0);
+            margin: 10px auto;
+
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section>
+            <div class="existing"> 기존 자식1 기존 사직2</div>
+            <p class="brother"> 다른 형제 요소</p>
+        </section>
+
+        <button onclick="beforeBtn();"> before() 테스트</button>
+        <button onclick="afterBtn();"> after 테스트</button>
+        <button onclick="prependBtn();"> prepend() 테스트</button>
+        <button onclick="appendBtn();"> append 테스트</button>
+        <button onclick="appendChildBtn();"> appendChild() 테스트</button>
+        <button onclick="testInsertBtn();"> 문자열 삽입 비교</button>
+    </main>
+
+    <script>
+        function beforeBtn() {
+            const $before = document.querySelector('.existing');
+
+            const beforeNode = document.createElement('div');
+            beforeNode.classList.add('addBefore');
+
+
+            const beforeNodeText = document.createTextNode('before()로 추가된 요소');
+
+            beforeNode.appendChild(beforeNodeText);
+
+            $before.before(beforeNode);
+        }
+        function afterBtn() {
+            const $after = document.querySelector('.existing');
+
+            const afterNode = document.createElement('div');
+            afterNode.classList.add('addBefore');
+
+
+            const afterNodeText = document.createTextNode('after()로 추가된 요소');
+
+            afterNode.appendChild(afterNodeText);
+
+            $after.after(afterNode);
+
+        }
+        function prependBtn() {
+            const $prepend = document.querySelector('.existing');
+
+            const prependNode = document.createElement('div');
+            prependNode.classList.add('addBefore');
+
+
+            const prependNodeText = document.createTextNode('prepend()로 추가된 요소');
+
+            prependNode.appendChild(prependNodeText);
+
+            $prepend.prepend(prependNode);
+        }
+        function appendBtn() {
+            const $append = document.querySelector('.existing');
+
+            const appendNode = document.createElement('div');
+            appendNode.classList.add('addBefore');
+
+
+            const appendNodeText = document.createTextNode('append()로 추가된 요소');
+
+            appendNode.appendChild(appendNodeText);
+
+            $append.append(appendNode);
+
+        }
+        function appendChildBtn() {
+            const $appendChild = document.querySelector('.existing');
+
+            const appendChildNode = document.createElement('div');
+            appendChildNode.classList.add('addBefore');
+
+
+            const appendChildNodeText = document.createTextNode('appendChild()로 추가된 요소');
+
+            appendChildNode.appendChild(appendChildNodeText);
+
+            $appendChild.append(appendChildNode);
+
+        }
+        function testInsertBtn() {
+            const $testInsertChild = document.querySelector('.existing');
+
+            const testInsertNode = document.createElement('span');
+
+            const testInsertNodeText = document.createTextNode('append()로 추가된 문자열');
+            const testInsertNodeText2 = document.createTextNode('123');
+
+
+            $testInsertChild.append(testInsertNodeText);
+            $testInsertChild.prepend(testInsertNodeText2);
+
+
+        }
+
+    </script>
+</body>
+
+</html>

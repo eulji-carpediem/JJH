@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <h2> 기존 내용 </h3>
+        <div></div>
+        <button onclick="nodeCreate();"> 요소 생성하기</button>
+    </main>
+
+    <script>
+        function nodeCreate() {
+            const createnode = document.createElement('div');
+            const createspan = document.createElement('span');
+            const $create = document.querySelector('div');
+
+            const createnodeText = document.createTextNode('안녕하세요! createElement로 만든 요소입니다.');
+            const createspanText = document.createTextNode('이 텍스트는 span 입니다.');
+
+            createnode.appendChild(createnodeText);
+            createspan.appendChild(createspanText);
+
+            $create.appendChild(createnode);
+            $create.appendChild(createspan);
+        }
+    </script>
+</body>
+
+</html>

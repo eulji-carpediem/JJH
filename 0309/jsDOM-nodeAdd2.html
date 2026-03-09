@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main {
+            /* width : 50%; */
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .existing-details {
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 5px;
+            border: 3px solid blue;
+        }
+
+        .new-red {
+            background: red;
+            width: 45%;
+            color: white;
+        }
+
+        .new-orange {
+            background: orange;
+            width: 100%;
+            color: white;
+        }
+
+        .new-violet {
+            background: violet;
+            width: 100%;
+            color: white;
+        }
+
+        .new-green {
+            background: green;
+            width: 45%;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="existing-details"> 기존 내용 </div>
+    </main>
+</body>
+
+<script>
+    const $beforeAfterBegin = document.querySelector('.existing-details');
+
+    $beforeAfterBegin.insertAdjacentHTML(
+        "beforebegin",
+        '<div class="new-red"> beforebegin - 앞 형제 </div>'
+    )
+
+    $beforeAfterBegin.insertAdjacentHTML(
+        "afterend",
+        '<div class="new-green"> afterend - 뒤 형제 </div>'
+    )
+
+    $beforeAfterBegin.insertAdjacentHTML(
+        "afterbegin",
+        '<div class="new-orange"> afterbegin - 첫 자식 </div>'
+    )
+
+    $beforeAfterBegin.insertAdjacentHTML(
+        "beforeend",
+        '<div class="new-violet"> beforeend - 마지막 자식 </div>'
+    )
+</script>
+
+</html>
