@@ -32,7 +32,7 @@
             height: 50px;
             width: 100%;
             background: rgba(255, 0, 0, 0.623);
-            border : 1px solid black;
+            border: 1px solid black;
 
             display: flex;
             align-items: center;
@@ -50,33 +50,37 @@
         <div class="list box4"> 삭제할 자식 4</div>
     </main>
 
-    <button onclick="firstDelete();"> 첫 번째 자식 삭제 </button>
-    <button onclick="secondDelete();"> 두 번째 자식 삭제 </button>
-    <button onclick="thirdDelete();"> 세 번째 자식 삭제 </button>
-    <button onclick="finalDelete();"> 마지막 자식 삭제 </button>
+    <button onclick="totalDelete('.box1');"> 첫 번째 자식 삭제 </button>
+    <button onclick="totalDelete('.box2');"> 두 번째 자식 삭제 </button>
+    <button onclick="totalDelete('.box3');"> 세 번째 자식 삭제 </button>
+    <button onclick="totalDelete('.box4');"> 마지막 자식 삭제 </button>
 
     <script>
-        const $parent = document.querySelector('.delete-ct');
-
-        function firstDelete() {
-            const $firstchild = document.querySelector('.box1');
-            $parent.removeChild($firstchild);
+        function totalDelete(del) {
+            const $parent = document.querySelector('.delete-ct');
+            const $totlaChild = document.querySelector(`${del}`)
+            $parent.removeChild($totlaChild);
         }
 
-        function secondDelete() {
-            const $secondchild = document.querySelector('.box2');
-            $parent.removeChild($secondchild);
-        }
+        // function firstDelete() {
+        //     const $firstchild = document.querySelector('.box1');
+        //     $parent.removeChild($firstchild);
+        // }
 
-        function thirdDelete() {
-            const $thirdchild = document.querySelector('.box3');
-            $parent.removeChild($thirdchild);
-        }
+        // function secondDelete() {
+        //     const $secondchild = document.querySelector('.box2');
+        //     $parent.removeChild($secondchild);
+        // }
 
-        function finalDelete() {
-            const $final = document.querySelector('.box4');
-            $parent.removeChild($final);
-        }
+        // function thirdDelete() {
+        //     const $thirdchild = document.querySelector('.box3');
+        //     $parent.removeChild($thirdchild);
+        // }
+
+        // function finalDelete() {
+        //     const $final = document.querySelector('.box4');
+        //     $parent.removeChild($final);
+        // }
     </script>
 </body>
 

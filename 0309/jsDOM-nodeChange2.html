@@ -62,46 +62,51 @@
     </main>
 
     <section>
-        <button onclick="firstChange();"> 첫 번째 교체 </button>
-        <button onclick="secondChange();"> 두 번째 교체 </button>
-        <button onclick="thirdChange();"> 세 번째 교체 </button>
+        <button onclick="totalChange('.box1', 'div', '새로운 첫번쨰 자식');"> 첫 번째 교체 </button>
+        <button onclick="totalChange('.box2', 'span', '새로운 두번째 자식');"> 두 번째 교체 </button>
+        <button onclick="totalChange('.box3', 'div', '<b>새로운 세번째 자식</b>');"> 세 번째 교체 </button>
     </section>
 
 
     <script>
-        function firstChange() {
-            const $first = document.querySelector('#main-ct');
+        function totalChange(tag, newtag, newText) {
+            const $total = document.querySelector('#main-ct');
+            const $totalbox = document.querySelector(`${tag}`);
+            const $newbox = document.createElement(`${newtag}`);
+            $newbox.innerHTML = `${newText}`;
+            $newbox.classList.add('newBox1');
 
-            const $firstbox1 = document.querySelector('.box1');
-            const $newbox1 = document.createElement('div');
-            $newbox1.innerText = "새로운 첫 번째 자식"
-            $newbox1.classList.add('newBox1');
-
-            $first.replaceChild($newbox1, $firstbox1);
+            $total.replaceChild($newbox, $totalbox);
         }
 
-        function secondChange() {
-            const $first = document.querySelector('#main-ct');
+        // function firstChange() {
+        //     const $firstbox1 = document.querySelector('.box1');
+        //     const $newbox1 = document.createElement('div');
+        //     $newbox1.innerText = "새로운 첫 번째 자식"
+        //     $newbox1.classList.add('newBox1');
 
-            const $firstbox1 = document.querySelector('.box2');
-            const $newbox1 = document.createElement('span');
-            $newbox1.innerText = "새로운 두 번째 자식"
-            $newbox1.classList.add('newBox1');
+        //     $first.replaceChild($newbox1, $firstbox1);
+        // }
 
-            $first.replaceChild($newbox1, $firstbox1);
-        }
+        // function secondChange() {
+        //     const $firstbox1 = document.querySelector('.box2');
+        //     const $newbox1 = document.createElement('span');
+        //     $newbox1.innerText = "새로운 두 번째 자식"
+        //     $newbox1.classList.add('newBox1');
 
-        function thirdChange() {
-            const $first = document.querySelector('#main-ct');
+        //     $first.replaceChild($newbox1, $firstbox1);
+        // }
 
-            const $firstbox1 = document.querySelector('.box3');
-            const $newbox1 = document.createElement('div');
-            $newbox1.innerHTML = "<b> 새로운 세 번째 자식 </b>";
-            $newbox1.classList.add('newBox1');
-            $newbox1.style.fontSize = "25px";
+        // function thirdChange() {
+        //     const $first = document.querySelector('#main-ct');
+        //     const $firstbox1 = document.querySelector('.box3');
+        //     const $newbox1 = document.createElement('div');
+        //     $newbox1.innerHTML = "<b> 새로운 세 번째 자식 </b>";
+        //     $newbox1.classList.add('newBox1');
+        //     $newbox1.style.fontSize = "25px";
 
-            $first.replaceChild($newbox1, $firstbox1);
-        }
+        //     $first.replaceChild($newbox1, $firstbox1);
+        // }
     </script>
 </body>
 
