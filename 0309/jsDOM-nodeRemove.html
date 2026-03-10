@@ -49,31 +49,35 @@
         <div class="list box4"> 삭제할 항목 4</div>
     </main>
 
-    <button onclick="firstDelete();"> 첫 번째 삭제 </button>
-    <button onclick="secondDelete();"> 두 번째 삭제 </button>
-    <button onclick="thirdDelete();"> 세 번째 삭제 </button>
-    <button onclick="finalDelete();"> 마지막 삭제 </button>
+    <button onclick="totalDelete('box1');"> 첫 번째 삭제 </button>
+    <button onclick="totalDelete('box2');"> 두 번째 삭제 </button>
+    <button onclick="totalDelete('box3');"> 세 번째 삭제 </button>
+    <button onclick="totalDelete('box4');"> 마지막 삭제 </button>
 
     <script>
-        function firstDelete() {
-            const $first = document.querySelector('.box1');
-            $first.remove();
+        function totalDelete(className) {
+            const $total = document.querySelector(`.${className}`);
+            $total.remove();
         }
+        // function firstDelete() {
+        //     const $first = document.querySelector('.box1');
+        //     $first.remove();
+        // }
 
-        function secondDelete() {
-            const $second = document.querySelector('.box2');
-            $second.remove();
-        }
+        // function secondDelete() {
+        //     const $second = document.querySelector('.box2');
+        //     $second.remove();
+        // }
 
-        function thirdDelete() {
-            const $third = document.querySelector('.box3');
-            $third.remove();
-        }
+        // function thirdDelete() {
+        //     const $third = document.querySelector('.box3');
+        //     $third.remove();
+        // }
 
-        function finalDelete() {
-            const $final = document.querySelector('.box4');
-            $final.remove();
-        }
+        // function finalDelete() {
+        //     const $final = document.querySelector('.box4');
+        //     $final.remove();
+        // }
     </script>
 </body>
 
