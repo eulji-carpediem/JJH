@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .userForm-ct {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        label {
+            font-weight: 700;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select {
+            height: 40px;
+        }
+
+        input[type="text"]::placeholder,
+        input[type="email"]::placeholder {
+            color: rgba(128, 128, 128, 0.578);
+            padding: 3px;
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        select {
+            padding: 10px;
+        }
+
+        button {
+            width: 90px;
+            height: 40px;
+            border: none;
+            background: rgba(225, 0, 255, 0.401);
+            color: white;
+            margin-top: 20px;
+        }
+
+        .textarea-add {
+            font-size: 15px;
+            color: rgba(128, 128, 128, 0.578);
+        }
+
+        .inf-agree-ct {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> 사용자 입력 양식 이벤트 연습하기</h1>
+    <form action="" method="get" name="userInf">
+        <div class="userForm-ct">
+            <label> 이름 </label>
+            <input type="text" name="name" placeholder="이름을 입력하세요" required>
+
+            <label> 이메일</label>
+            <input type="email" name="email" placeholder="example@domai.com">
+
+            <label> 성별</label>
+            <div>
+                <input type="radio" name="gender" id="male"> <label for="male">남자</label>
+                <input type="radio" name="gender" id="female"> <label for="female">여자</label>
+            </div>
+
+            <label> 참여 일자 선택</label>
+            <select id="date-select-ct" name="dateSelect">
+                <option selected disabled hidden> -- 날짜 선택 -- </option>
+                <option value="0311"> 2026-03-11</option>
+                <option value="0312"> 2026-03-12</option>
+                <option value="0313"> 2026-03-13</option>
+                <option value="0314"> 2026-03-14</option>
+                <option value="0315"> 2026-03-15</option>
+                <option value="0316"> 2026-03-16</option>
+            </select>
+
+            <label> 요청사항</label>
+            <textarea type="text" name="name" rows="6" style="resize: none;"> 요청 사항을 입력하세요 </textarea>
+            <div><span class="textarea-add">0</span>/500자</div>
+
+            <div class="inf-agree-ct">
+                <input type="checkbox">
+                <span> 개인정보 수집에 동의합니다. </span>
+            </div>
+
+            <button onclick="btnSubmit();" type="submit"> 신청하기</button>
+        </div>
+    </form>
+
+    <script>
+        const $form = document.forms.userInf;
+        const $date = $form.dateSelect;
+        function btnSubmit() {
+            if(!$date.value) {
+                alert("참여날짜를 선택해주세요")
+            }
+        }
+        console.log($form.dateSelect);
+    </script>
+</body>
+
+</html>
