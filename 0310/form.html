@@ -51,6 +51,11 @@
         .inf-agree-ct {
             margin-left: 10px;
         }
+
+        .fc {
+            outline : 2px dashed lightblue;
+            background: rgba(22, 135, 172, 0.226);
+        }
     </style>
 </head>
 
@@ -98,11 +103,14 @@
         const $form = document.forms.userInf;
         const $date = $form.dateSelect;
         function btnSubmit() {
-            if(!$date.value) {
+            if (!$date.value) {
                 alert("참여날짜를 선택해주세요")
             }
         }
         console.log($form.dateSelect);
+
+        $form.addEventListener('focusin', (e) => e.target.classList.add('fc'));
+        $form.addEventListener('focusout', (e) => e.target.classList.remove('fc'));
     </script>
 </body>
 
