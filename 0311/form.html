@@ -34,15 +34,6 @@
             padding: 10px;
         }
 
-        button {
-            width: 90px;
-            height: 40px;
-            border: none;
-            background: rgba(225, 0, 255, 0.401);
-            color: white;
-            margin-top: 20px;
-        }
-
         .textarea-add {
             font-size: 15px;
             color: rgba(128, 128, 128, 0.578);
@@ -53,8 +44,15 @@
         }
 
         .fc {
-            outline : 2px dashed lightblue;
+            outline: 2px dashed lightblue;
             background: rgba(22, 135, 172, 0.226);
+        }
+
+        input[type="submit"] {
+            width: 100px;
+            height: 30px;
+            background: rgba(28, 153, 132, 0.411);
+            border: none;
         }
     </style>
 </head>
@@ -76,8 +74,8 @@
             </div>
 
             <label> 참여 일자 선택</label>
-            <select id="date-select-ct" name="dateSelect">
-                <option selected disabled hidden> -- 날짜 선택 -- </option>
+            <select id="date" name="date">
+                <option value="default" selected disabled> -- 날짜 선택 -- </option>
                 <option value="0311"> 2026-03-11</option>
                 <option value="0312"> 2026-03-12</option>
                 <option value="0313"> 2026-03-13</option>
@@ -87,30 +85,42 @@
             </select>
 
             <label> 요청사항</label>
-            <textarea type="text" name="name" rows="6" style="resize: none;"> 요청 사항을 입력하세요 </textarea>
+            <textarea type="text" name="textA" rows="6" id="textct" style="resize: none;" maxlength="500"> 요청 사항을 입력하세요 </textarea>
             <div><span class="textarea-add">0</span>/500자</div>
 
             <div class="inf-agree-ct">
-                <input type="checkbox">
+                <input type="checkbox" name="perCheck" checked>
                 <span> 개인정보 수집에 동의합니다. </span>
             </div>
 
-            <button onclick="btnSubmit();" type="submit"> 신청하기</button>
+            <input type="submit" name="submit" value="신청하기">
         </div>
     </form>
 
     <script>
         const $form = document.forms.userInf;
-        const $date = $form.dateSelect;
-        function btnSubmit() {
-            if (!$date.value) {
-                alert("참여날짜를 선택해주세요")
+        const $submit = $form.submit;
+        const $textarea = $form.textA;
+        let  $count = document.querySelector('.textarea-add');
+
+        console.log($textarea);
+        $form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const $date = $form.date;
+            if ($date.value === "default") {
+                alert("날짜를 선택하세요");
             }
-        }
-        console.log($form.dateSelect);
+        })
 
         $form.addEventListener('focusin', (e) => e.target.classList.add('fc'));
         $form.addEventListener('focusout', (e) => e.target.classList.remove('fc'));
+
+        $textarea.addEventListener("input", (e) => {
+            const $check = $textarea.value;
+            $count.innerText = $check.length;
+
+        })
+
     </script>
 </body>
 
